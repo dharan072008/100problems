@@ -5,21 +5,28 @@ public static void main(String[] args)
     Scanner scan = new Scanner(System.in);
     System.out.print("Enter the number to check whether it is prime or not: ");
     int n = scan.nextInt();
-    boolean isprime = true;
+    int count = 0;
 
     if(n<2)
     {
-        isprime = false;
+        System.out.println("The given number is not prime");
     }
-    else
-    {
-        for(i=2;i<n;i++){
+    
+    
+        for(i=1;i<n;i++){
             if(n%i==0){
-                isprime = false;
-                break;
+                count = count + 1;
+                
             }
         }
-    }
-    String result = isprime ? "prime" : "not prime";
-    System.out.println("The number "+n+" is "+result);
+        if(count>2){
+            
+            System.out.println("The given number is not prime");
+        }
+        else{
+            System.out.println("The given number is prime");
+        }
+        
+    
+    
 }
